@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CodeLite_Workspace Name="Lab" Database="" Version="10.0.0">
-  <Project Name="Namespaces" Path="Lab_1/Lab_1.project" Active="No"/>
+  <Project Name="Namespaces" Path="Lab_1/Lab_1.project" Active="Yes"/>
   <Project Name="References_Pointers" Path="References_Pointers/References_Pointers.project" Active="No"/>
   <Project Name="Memory_Monitoring" Path="Memory_Monitoring/Memory_Monitoring.project" Active="No"/>
   <Project Name="Construct_Destruct" Path="Construct_Destruct/Construct_Destruct.project" Active="No"/>
   <Project Name="Expression" Path="Expression/Expression.project" Active="No"/>
-  <Project Name="Collections" Path="Collections/Collections.project" Active="Yes"/>
+  <Project Name="Collections" Path="Collections/Collections.project" Active="No"/>
   <BuildMatrix>
     <WorkspaceConfiguration Name="Debug" Selected="yes">
       <Environment/>
