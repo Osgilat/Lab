@@ -1,0 +1,15 @@
+C:\Windows\SYSTEM32\sfc.dll
+C:\Windows\AppPatch\AppPatch64\AcLayers.DLL
+C:\Windows\SYSTEM32\sfc_os.DLL
+C:\Windows\SYSTEM32\WINSPOOL.DRV
+C:\Windows\system32\apphelp.dll
+C:\Windows\SYSTEM32\bcrypt.dll
+C:\Windows\system32\bcryptPrimitives.dll
+C:\Windows\system32\IMM32.DLL
+C:\Windows\system32\RPCRT4.dll
+C:\Windows\system32\combase.dll
+C:\Windows\system32\SHLWAPI.dll
+C:\Windows\system32\USER32.dll
+C:\Windows\system32\GDI32.dll
+C:\Windows\system32\KERNELBASE.dll
+C:\Windows\system32\KERNEL32.DLL

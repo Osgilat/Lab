@@ -1,0 +1,4 @@
+C:\Windows\system32\KERNELBASE.dll
+C:\Windows\system32\KERNEL32.DLL
+C:\Windows\system32\msvcrt.dll
+C:\Windows\SYSTEM32\ntdll.dll

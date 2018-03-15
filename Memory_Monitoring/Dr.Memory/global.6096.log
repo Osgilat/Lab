@@ -1,0 +1,198 @@
+Dr. Memory version 1.11.0 build 2 built on Aug 29 2016 02:41:18
+start time: 3656941:24:00.997 == 13:24:00.997 03/08/2018
+Recorded 115 suppression(s) from default C:\Program Files (x86)\Dr. Memory\bin64\suppress-default.txt
+new thread #0 id=5336
+
+module load event: "Memory_Monitoring.exe" 0x0000000000400000-0x000000000052f000 modid: 1 C:\C++Workspace\Lab\Memory_Monitoring\Debug\Memory_Monitoring.exe
+WARNING: assuming operator new[] is non-placement in Memory_Monitoring.exe @0x00000000004a5cf0
+WARNING: assuming operator new is non-placement in Memory_Monitoring.exe @0x00000000004a5d20
+
+module load event: "drmemorylib.dll" 0x00000000009f0000-0x0000000000c2f000 modid: 2 C:\Program Files (x86)\Dr. Memory\bin64\release\drmemorylib.dll
+
+module load event: "dynamorio.dll" 0x0000000071000000-0x0000000071195000 modid: 3 C:\Program Files (x86)\Dr. Memory\dynamorio\lib64\release\dynamorio.dll
+
+module load event: "KERNELBASE.dll" 0x00007ffb7b2f0000-0x00007ffb7b4d8000 modid: 4 C:\Windows\system32\KERNELBASE.dll
+WARNING: unable to load symbols for C:\Windows\system32\KERNELBASE.dll
+
+module load event: "KERNEL32.dll" 0x00007ffb7e360000-0x00007ffb7e40d000 modid: 5 C:\Windows\system32\KERNEL32.DLL
+WARNING: unable to load symbols for C:\Windows\system32\KERNEL32.DLL
+
+module load event: "msvcrt.dll" 0x00007ffb7e410000-0x00007ffb7e4ad000 modid: 6 C:\Windows\system32\msvcrt.dll
+WARNING: unable to load symbols for C:\Windows\system32\msvcrt.dll
+WARNING: new/delete has no local wrapper => disabling mismatch detection for msvcrt.dll
+WARNING: new/delete has no local wrapper => disabling mismatch detection for msvcrt.dll
+WARNING: new == new[] => disabling mismatch detection for msvcrt.dll
+WARNING: new == new[] => disabling mismatch detection for msvcrt.dll
+WARNING: new/delete has no local wrapper => disabling mismatch detection for msvcrt.dll
+
+module load event: "ntdll.dll" 0x00007ffb7e810000-0x00007ffb7e9d1000 modid: 7 C:\Windows\SYSTEM32\ntdll.dll
+WARNING: unable to load symbols for C:\Windows\SYSTEM32\ntdll.dll
+WARNING: fail to find call to RtlFreeStringRoutine
+WARNING: fail to find call to RtlFreeStringRoutine
+WARNING: fail to find call to RtlFreeStringRoutine
+
+Potential Error #1: LEAK 4 direct bytes 0x00000000018033a0-0x00000000018033a4 + 0 indirect bytes
+# 0 replace_operator_new [d:\drmemory_package\common\alloc_replace.c:2899] (0x0000000000a16390 <drmemorylib.dll+0x26390>) modid:2
+# 1 msvcrt.dll!flsbuf     (0x00007ffb7e456b53 <msvcrt.dll+0x46b53>) modid:6
+# 2 msvcrt.dll!fputc      (0x00007ffb7e45cc9e <msvcrt.dll+0x4cc9e>) modid:6
+# 3 msvcrt.dll!flsbuf     (0x00007ffb7e456b9d <msvcrt.dll+0x46b9d>) modid:6
+# 4 msvcrt.dll!fflush     (0x00007ffb7e456ca6 <msvcrt.dll+0x46ca6>) modid:6
+# 5 std::ostream::flush   [C:/crossdev/src/mingw-w64-v4-git/mingw-w64-crt/misc/mingw_getsp.S:46] (0x000000000046ad42 <Memory_Monitoring.exe+0x6ad42>) modid:1
+# 6 fp1                   [C:/C++Workspace/Lab/Memory_Monitoring/main.cpp:14] (0x000000000040160d <Memory_Monitoring.exe+0x160d>) modid:1
+# 7 fv                    [C:/C++Workspace/Lab/Memory_Monitoring/main.cpp:9] (0x00000000004015ee <Memory_Monitoring.exe+0x15ee>) modid:1
+# 8 mingw_onexit          [C:/crossdev/src/mingw-w64-v4-git/mingw-w64-crt/crt/atonexit.c:42] (0x000000000040d8e1 <Memory_Monitoring.exe+0xd8e1>) modid:1
+# 9 main                  [C:/C++Workspace/Lab/Memory_Monitoring/main.cpp:38] (0x0000000000401767 <Memory_Monitoring.exe+0x1767>) modid:1
+	error end
+
+Potential Error #2: LEAK 4 direct bytes 0x00000000018033f0-0x00000000018033f4 + 0 indirect bytes
+# 0 replace_operator_new [d:\drmemory_package\common\alloc_replace.c:2899] (0x0000000000a16390 <drmemorylib.dll+0x26390>) modid:2
+# 1 msvcrt.dll!write      (0x00007ffb7e42fada <msvcrt.dll+0x1fada>) modid:6
+# 2 msvcrt.dll!flsbuf     (0x00007ffb7e456b53 <msvcrt.dll+0x46b53>) modid:6
+# 3 msvcrt.dll!fputc      (0x00007ffb7e45cc9e <msvcrt.dll+0x4cc9e>) modid:6
+# 4 msvcrt.dll!flsbuf     (0x00007ffb7e456b9d <msvcrt.dll+0x46b9d>) modid:6
+# 5 msvcrt.dll!fflush     (0x00007ffb7e456ca6 <msvcrt.dll+0x46ca6>) modid:6
+# 6 std::ostream::flush   [C:/crossdev/src/mingw-w64-v4-git/mingw-w64-crt/misc/mingw_getsp.S:46] (0x000000000046ad42 <Memory_Monitoring.exe+0x6ad42>) modid:1
+# 7 fp2                   [C:/C++Workspace/Lab/Memory_Monitoring/main.cpp:20] (0x0000000000401669 <Memory_Monitoring.exe+0x1669>) modid:1
+# 8 fv                    [C:/C++Workspace/Lab/Memory_Monitoring/main.cpp:9] (0x00000000004015ee <Memory_Monitoring.exe+0x15ee>) modid:1
+# 9 main                  [C:/C++Workspace/Lab/Memory_Monitoring/main.cpp:40] (0x000000000040176c <Memory_Monitoring.exe+0x176c>) modid:1
+	error end
+
+Potential Error #3: LEAK 4 direct bytes 0x0000000001803440-0x0000000001803444 + 0 indirect bytes
+# 0 replace_operator_new [d:\drmemory_package\common\alloc_replace.c:2899] (0x0000000000a16390 <drmemorylib.dll+0x26390>) modid:2
+# 1 msvcrt.dll!write      (0x00007ffb7e42fada <msvcrt.dll+0x1fada>) modid:6
+# 2 msvcrt.dll!flsbuf     (0x00007ffb7e456b53 <msvcrt.dll+0x46b53>) modid:6
+# 3 msvcrt.dll!fputc      (0x00007ffb7e45cc9e <msvcrt.dll+0x4cc9e>) modid:6
+# 4 msvcrt.dll!flsbuf     (0x00007ffb7e456b9d <msvcrt.dll+0x46b9d>) modid:6
+# 5 msvcrt.dll!fflush     (0x00007ffb7e456ca6 <msvcrt.dll+0x46ca6>) modid:6
+# 6 std::ostream::flush   [C:/crossdev/src/mingw-w64-v4-git/mingw-w64-crt/misc/mingw_getsp.S:46] (0x000000000046ad42 <Memory_Monitoring.exe+0x6ad42>) modid:1
+# 7 fp2                   [C:/C++Workspace/Lab/Memory_Monitoring/main.cpp:22] (0x00000000004016af <Memory_Monitoring.exe+0x16af>) modid:1
+# 8 fv                    [C:/C++Workspace/Lab/Memory_Monitoring/main.cpp:9] (0x00000000004015ee <Memory_Monitoring.exe+0x15ee>) modid:1
+# 9 main                  [C:/C++Workspace/Lab/Memory_Monitoring/main.cpp:40] (0x000000000040176c <Memory_Monitoring.exe+0x176c>) modid:1
+	error end
+
+NEW THREAD: main thread 5336
+
+
+Potential Error #4: HANDLE LEAK: KERNEL handle 0x00000000000000c4 and 0 similar handle(s) were opened but not closed:
+# 0 system call NtOpenDirectoryObject
+# 1 KERNELBASE.dll!BaseGetNamedObjectDirectory (0x00007ffb7b30cf73 <KERNELBASE.dll+0x1cf73>) modid:4
+# 2 KERNELBASE.dll!BaseFormatObjectAttributes (0x00007ffb7b30cb74 <KERNELBASE.dll+0x1cb74>) modid:4
+# 3 KERNELBASE.dll!CreateMutexExW (0x00007ffb7b36270c <KERNELBASE.dll+0x7270c>) modid:4
+# 4 KERNELBASE.dll!SetUnhandledExceptionFilter (0x00007ffb7b34723a <KERNELBASE.dll+0x5723a>) modid:4
+# 5 KERNELBASE.dll!CreateMutexExA (0x00007ffb7b362667 <KERNELBASE.dll+0x72667>) modid:4
+# 6 __shmem_winpthreads_grab [C:/crossdev/src/mingw-w64-v4-git/mingw-w64-crt/misc/output_format.c:45] (0x000000000041fe6e <Memory_Monitoring.exe+0x1fe6e>) modid:1
+# 7 mutex_ref_init        [C:/crossdev/src/mingw-w64-v4-git/mingw-w64-crt/misc/output_format.c:45] (0x000000000041afc8 <Memory_Monitoring.exe+0x1afc8>) modid:1
+# 8 __mingw_GetSectionCount [C:/crossdev/src/mingw-w64-v4-git/mingw-w64-crt/crt/pesect.c:124] (0x000000000040eb68 <Memory_Monitoring.exe+0xeb68>) modid:1
+# 9 pthread_mutex_init    [C:/crossdev/src/mingw-w64-v4-git/mingw-w64-crt/misc/output_format.c:45] (0x000000000041b3a2 <Memory_Monitoring.exe+0x1b3a2>) modid:1
+#10 _GLOBAL__sub_I___cxa_allocate_exception [C:/crossdev/src/mingw-w64-v4-git/mingw-w64-crt/misc/mingw_getsp.S:46] (0x00000000004a6d12 <Memory_Monitoring.exe+0xa6d12>) modid:1
+#11 __mingw_init_ehandler [C:/crossdev/src/mingw-w64-v4-git/mingw-w64-crt/crt/crt_handler.c:61] (0x000000000040e4d7 <Memory_Monitoring.exe+0xe4d7>) modid:1
+#12 __do_global_ctors     [C:/crossdev/src/mingw-w64-v4-git/mingw-w64-crt/crt/gccmain.c:44] (0x000000000040d975 <Memory_Monitoring.exe+0xd975>) modid:1
+#13 __tmainCRTStartup     [C:/crossdev/src/mingw-w64-v4-git/mingw-w64-crt/crt/crtexe.c:324] (0x00000000004013bb <Memory_Monitoring.exe+0x13bb>) modid:1
+#14 .l_start              [C:/crossdev/src/mingw-w64-v4-git/mingw-w64-crt/crt/crtexe.c:212] (0x000000000040151b <Memory_Monitoring.exe+0x151b>) modid:1
+#15 KERNEL32.dll!BaseThreadInitThunk (0x00007ffb7e378102 <KERNEL32.dll+0x18102>) modid:5
+Note: @0:00:00.548 in thread 5336
+	error end
+
+Potential Error #5: HANDLE LEAK: KERNEL handle 0x00000000000000d8 and 0 similar handle(s) were opened but not closed:
+# 0 system call NtCreateSemaphore
+# 1 KERNELBASE.dll!CreateSemaphoreExW (0x00007ffb7b34a8c4 <KERNELBASE.dll+0x5a8c4>) modid:4
+# 2 KERNELBASE.dll!CloseHandle    (0x00007ffb7b30c4a1 <KERNELBASE.dll+0x1c4a1>) modid:4
+# 3 __shmem_winpthreads_grab [C:/crossdev/src/mingw-w64-v4-git/mingw-w64-crt/misc/output_format.c:45] (0x000000000041ff0b <Memory_Monitoring.exe+0x1ff0b>) modid:1
+# 4 pthread_spin_lock     [C:/crossdev/src/mingw-w64-v4-git/mingw-w64-crt/misc/output_format.c:45] (0x000000000041bf71 <Memory_Monitoring.exe+0x1bf71>) modid:1
+# 5 pthread_mutex_init    [C:/crossdev/src/mingw-w64-v4-git/mingw-w64-crt/misc/output_format.c:45] (0x000000000041b409 <Memory_Monitoring.exe+0x1b409>) modid:1
+# 6 mutex_static_init     [C:/crossdev/src/mingw-w64-v4-git/mingw-w64-crt/misc/output_format.c:45] (0x000000000041b5f5 <Memory_Monitoring.exe+0x1b5f5>) modid:1
+# 7 mutex_ref             [C:/crossdev/src/mingw-w64-v4-git/mingw-w64-crt/misc/output_format.c:45] (0x000000000041b71d <Memory_Monitoring.exe+0x1b71d>) modid:1
+# 8 pthread_mutex_lock_intern [C:/crossdev/src/mingw-w64-v4-git/mingw-w64-crt/misc/output_format.c:45] (0x000000000041b872 <Memory_Monitoring.exe+0x1b872>) modid:1
+# 9 pop_pthread_mem       [C:/crossdev/src/mingw-w64-v4-git/mingw-w64-crt/misc/output_format.c:45] (0x000000000041ca2a <Memory_Monitoring.exe+0x1ca2a>) modid:1
+#10 __pthread_self_lite   [C:/crossdev/src/mingw-w64-v4-git/mingw-w64-crt/misc/output_format.c:45] (0x000000000041d118 <Memory_Monitoring.exe+0x1d118>) modid:1
+#11 mutex_unref.isra.1    [C:/crossdev/src/mingw-w64-v4-git/mingw-w64-crt/misc/output_format.c:45] (0x000000000041b0d4 <Memory_Monitoring.exe+0x1b0d4>) modid:1
+#12 enterOnceObject       [C:/crossdev/src/mingw-w64-v4-git/mingw-w64-crt/misc/output_format.c:45] (0x000000000041c275 <Memory_Monitoring.exe+0x1c275>) modid:1
+#13 pthread_once          [C:/crossdev/src/mingw-w64-v4-git/mingw-w64-crt/misc/output_format.c:45] (0x000000000041de87 <Memory_Monitoring.exe+0x1de87>) modid:1
+#14 KERNELBASE.dll!CreateSemaphoreExW (0x00007ffb7b34a8d7 <KERNELBASE.dll+0x5a8d7>) modid:4
+#15 pthread_spin_init.part.0 [C:/crossdev/src/mingw-w64-v4-git/mingw-w64-crt/misc/output_format.c:45] (0x000000000041be21 <Memory_Monitoring.exe+0x1be21>) modid:1
+#16 std::locale::_S_initialize [C:/crossdev/src/mingw-w64-v4-git/mingw-w64-crt/misc/mingw_getsp.S:46] (0x000000000048eb88 <Memory_Monitoring.exe+0x8eb88>) modid:1
+#17 std::locale::locale   [C:/crossdev/src/mingw-w64-v4-git/mingw-w64-crt/misc/mingw_getsp.S:46] (0x00000000004914b6 <Memory_Monitoring.exe+0x914b6>) modid:1
+#18 std::ios_base::Init::Init [C:/crossdev/src/mingw-w64-v4-git/mingw-w64-crt/misc/mingw_getsp.S:46] (0x000000000049b59b <Memory_Monitoring.exe+0x9b59b>) modid:1
+#19 __static_initialization_and_destruction_0 [C:/TDM-GCC-64/lib/gcc/x86_64-w64-mingw32/5.1.0/include/c++/iostream:74] (0x00000000004017f7 <Memory_Monitoring.exe+0x17f7>) modid:1
+Note: @0:00:00.548 in thread 5336
+	error end
+
+Potential Error #6: HANDLE LEAK: KERNEL handle 0x00000000000000dc and 0 similar handle(s) were opened but not closed:
+# 0 system call NtCreateEvent
+# 1 KERNELBASE.dll!CreateEventA   (0x00007ffb7b339c5c <KERNELBASE.dll+0x49c5c>) modid:4
+# 2 KERNELBASE.dll!ReleaseSemaphore (0x00007ffb7b343afa <KERNELBASE.dll+0x53afa>) modid:4
+# 3 pthread_mutex_unlock  [C:/crossdev/src/mingw-w64-v4-git/mingw-w64-crt/misc/output_format.c:45] (0x000000000041b31a <Memory_Monitoring.exe+0x1b31a>) modid:1
+# 4 pop_pthread_mem       [C:/crossdev/src/mingw-w64-v4-git/mingw-w64-crt/misc/output_format.c:45] (0x000000000041ca95 <Memory_Monitoring.exe+0x1ca95>) modid:1
+# 5 __pthread_self_lite   [C:/crossdev/src/mingw-w64-v4-git/mingw-w64-crt/misc/output_format.c:45] (0x000000000041d155 <Memory_Monitoring.exe+0x1d155>) modid:1
+# 6 mutex_unref.isra.1    [C:/crossdev/src/mingw-w64-v4-git/mingw-w64-crt/misc/output_format.c:45] (0x000000000041b0d4 <Memory_Monitoring.exe+0x1b0d4>) modid:1
+# 7 enterOnceObject       [C:/crossdev/src/mingw-w64-v4-git/mingw-w64-crt/misc/output_format.c:45] (0x000000000041c275 <Memory_Monitoring.exe+0x1c275>) modid:1
+# 8 pthread_once          [C:/crossdev/src/mingw-w64-v4-git/mingw-w64-crt/misc/output_format.c:45] (0x000000000041de87 <Memory_Monitoring.exe+0x1de87>) modid:1
+# 9 KERNELBASE.dll!CreateSemaphoreExW (0x00007ffb7b34a8d7 <KERNELBASE.dll+0x5a8d7>) modid:4
+#10 pthread_spin_init.part.0 [C:/crossdev/src/mingw-w64-v4-git/mingw-w64-crt/misc/output_format.c:45] (0x000000000041be21 <Memory_Monitoring.exe+0x1be21>) modid:1
+#11 std::locale::_S_initialize [C:/crossdev/src/mingw-w64-v4-git/mingw-w64-crt/misc/mingw_getsp.S:46] (0x000000000048eb88 <Memory_Monitoring.exe+0x8eb88>) modid:1
+#12 std::locale::locale   [C:/crossdev/src/mingw-w64-v4-git/mingw-w64-crt/misc/mingw_getsp.S:46] (0x00000000004914b6 <Memory_Monitoring.exe+0x914b6>) modid:1
+#13 std::ios_base::Init::Init [C:/crossdev/src/mingw-w64-v4-git/mingw-w64-crt/misc/mingw_getsp.S:46] (0x000000000049b59b <Memory_Monitoring.exe+0x9b59b>) modid:1
+#14 __static_initialization_and_destruction_0 [C:/TDM-GCC-64/lib/gcc/x86_64-w64-mingw32/5.1.0/include/c++/iostream:74] (0x00000000004017f7 <Memory_Monitoring.exe+0x17f7>) modid:1
+#15 _GLOBAL__sub_I__Z2fvv [C:/C++Workspace/Lab/Memory_Monitoring/main.cpp:47] (0x0000000000401821 <Memory_Monitoring.exe+0x1821>) modid:1
+#16 __do_global_ctors     [C:/crossdev/src/mingw-w64-v4-git/mingw-w64-crt/crt/gccmain.c:44] (0x000000000040d975 <Memory_Monitoring.exe+0xd975>) modid:1
+#17 __tmainCRTStartup     [C:/crossdev/src/mingw-w64-v4-git/mingw-w64-crt/crt/crtexe.c:324] (0x00000000004013bb <Memory_Monitoring.exe+0x13bb>) modid:1
+#18 .l_start              [C:/crossdev/src/mingw-w64-v4-git/mingw-w64-crt/crt/crtexe.c:212] (0x000000000040151b <Memory_Monitoring.exe+0x151b>) modid:1
+#19 KERNEL32.dll!BaseThreadInitThunk (0x00007ffb7e378102 <KERNEL32.dll+0x18102>) modid:5
+Note: @0:00:00.564 in thread 5336
+	error end
+
+Potential Error #7: HANDLE LEAK: KERNEL handle 0x00000000000000e0 and 0 similar handle(s) were opened but not closed:
+# 0 system call NtDuplicateObject
+# 1 KERNELBASE.dll!DuplicateHandle (0x00007ffb7b31d5eb <KERNELBASE.dll+0x2d5eb>) modid:4
+# 2 __pthread_self_lite   [C:/crossdev/src/mingw-w64-v4-git/mingw-w64-crt/misc/output_format.c:45] (0x000000000041d1bd <Memory_Monitoring.exe+0x1d1bd>) modid:1
+# 3 mutex_unref.isra.1    [C:/crossdev/src/mingw-w64-v4-git/mingw-w64-crt/misc/output_format.c:45] (0x000000000041b0d4 <Memory_Monitoring.exe+0x1b0d4>) modid:1
+# 4 pthread_once          [C:/crossdev/src/mingw-w64-v4-git/mingw-w64-crt/misc/output_format.c:45] (0x000000000041de87 <Memory_Monitoring.exe+0x1de87>) modid:1
+# 5 KERNELBASE.dll!CreateSemaphoreExW (0x00007ffb7b34a8d7 <KERNELBASE.dll+0x5a8d7>) modid:4
+# 6 pthread_spin_init.part.0 [C:/crossdev/src/mingw-w64-v4-git/mingw-w64-crt/misc/output_format.c:45] (0x000000000041be21 <Memory_Monitoring.exe+0x1be21>) modid:1
+# 7 std::locale::_S_initialize [C:/crossdev/src/mingw-w64-v4-git/mingw-w64-crt/misc/mingw_getsp.S:46] (0x000000000048eb88 <Memory_Monitoring.exe+0x8eb88>) modid:1
+# 8 std::locale::locale   [C:/crossdev/src/mingw-w64-v4-git/mingw-w64-crt/misc/mingw_getsp.S:46] (0x00000000004914b6 <Memory_Monitoring.exe+0x914b6>) modid:1
+# 9 std::ios_base::Init::Init [C:/crossdev/src/mingw-w64-v4-git/mingw-w64-crt/misc/mingw_getsp.S:46] (0x000000000049b59b <Memory_Monitoring.exe+0x9b59b>) modid:1
+#10 __static_initialization_and_destruction_0 [C:/TDM-GCC-64/lib/gcc/x86_64-w64-mingw32/5.1.0/include/c++/iostream:74] (0x00000000004017f7 <Memory_Monitoring.exe+0x17f7>) modid:1
+#11 _GLOBAL__sub_I__Z2fvv [C:/C++Workspace/Lab/Memory_Monitoring/main.cpp:47] (0x0000000000401821 <Memory_Monitoring.exe+0x1821>) modid:1
+#12 __do_global_ctors     [C:/crossdev/src/mingw-w64-v4-git/mingw-w64-crt/crt/gccmain.c:44] (0x000000000040d975 <Memory_Monitoring.exe+0xd975>) modid:1
+#13 __tmainCRTStartup     [C:/crossdev/src/mingw-w64-v4-git/mingw-w64-crt/crt/crtexe.c:324] (0x00000000004013bb <Memory_Monitoring.exe+0x13bb>) modid:1
+#14 .l_start              [C:/crossdev/src/mingw-w64-v4-git/mingw-w64-crt/crt/crtexe.c:212] (0x000000000040151b <Memory_Monitoring.exe+0x151b>) modid:1
+#15 KERNEL32.dll!BaseThreadInitThunk (0x00007ffb7e378102 <KERNEL32.dll+0x18102>) modid:5
+Note: @0:00:00.564 in thread 5336
+	error end
+
+DUPLICATE ERROR COUNTS:
+
+SUPPRESSIONS USED:
+
+NO ERRORS FOUND:
+      0 unique,     0 total unaddressable access(es)
+      0 unique,     0 total invalid heap argument(s)
+      0 unique,     0 total GDI usage error(s)
+      0 unique,     0 total handle leak(s)
+      0 unique,     0 total warning(s)
+      0 unique,     0 total,      0 byte(s) of leak(s)
+      0 unique,     0 total,      0 byte(s) of possible leak(s)
+ERRORS IGNORED:
+      4 potential error(s) (suspected false positives)
+         (details: C:\Users\osgil\AppData\Roaming\Dr. Memory\DrMemory-Memory_Monitoring.exe.6096.000\potential_errors.txt)
+      3 potential leak(s) (suspected false positives)
+         (details: C:\Users\osgil\AppData\Roaming\Dr. Memory\DrMemory-Memory_Monitoring.exe.6096.000\potential_errors.txt)
+     68 ignored assumed-innocuous system leak(s)
+     40 unique,    40 total,  80134 byte(s) of still-reachable allocation(s)
+         (re-run with "-show_reachable" for details)
+Details: C:\Users\osgil\AppData\Roaming\Dr. Memory\DrMemory-Memory_Monitoring.exe.6096.000\results.txt
+
+DUPLICATE POTENTIAL ERROR COUNTS:
+
+NO POTENTIAL ERRORS FOUND:
+      0 unique,     0 total potential unaddressable access(es)
+      0 unique,     0 total potential invalid heap argument(s)
+      0 unique,     0 total potential GDI usage error(s)
+      4 unique,     4 total potential handle leak(s)
+      0 unique,     0 total potential warning(s)
+      3 unique,     3 total,     12 byte(s) of potential leak(s)
+      0 unique,     0 total,      0 byte(s) of potential possible leak(s)
+Details: C:\Users\osgil\AppData\Roaming\Dr. Memory\DrMemory-Memory_Monitoring.exe.6096.000\potential_errors.txt
+Exiting @0:00:00.579 in thread 5336
+LOG END
